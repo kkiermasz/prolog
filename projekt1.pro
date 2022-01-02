@@ -30,3 +30,14 @@ rect(S1, X1, Y1, X2, Y2, Z, S2) :-
     line(S1, X1, Y2, X2, Y2, Z, S3),
     succ(Y3, Y2),
     rect(S3, X1, Y1, X2, Y3, Z, S2).
+
+merge([], [], []).
+merge([S1|S1s], [S2|S2s], [S3|S3s]) :-
+	merge_col(S1, S2, S3),
+    merge(S1s, S2s, S3s).
+
+merge_col([], [], []).
+merge_col([' '|S1s], [' '|S2s], [' '|S3s]) :- merge_col(S1s, S2s, S3s).
+merge_col([S1|S1s], [' '|S2s], [S1|S3s]) :- merge_col(S1s, S2s, S3s).
+merge_col([_|S1s], [S2|S2s], [S2|S3s]) :- merge_col(S1s, S2s, S3s).
+    
