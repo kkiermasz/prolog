@@ -23,4 +23,10 @@ line(S1, X, Y1, X, Y2, Z, S2) :-
     point(S1, X, Y2, Z, S3),
     succ(Y3, Y2),
     line(S3, X, Y1, X, Y3, Z, S2).
-    
+
+rect(S1, X1, Y, X2, Y, Z, S2) :-
+    line(S1, X1, Y, X2, Y, Z, S2).    
+rect(S1, X1, Y1, X2, Y2, Z, S2) :-
+    line(S1, X1, Y2, X2, Y2, Z, S3),
+    succ(Y3, Y2),
+    rect(S3, X1, Y1, X2, Y3, Z, S2).
