@@ -37,7 +37,6 @@ merge([S1|S1s], [S2|S2s], [S3|S3s]) :-
     merge(S1s, S2s, S3s).
 
 merge_col([], [], []).
-merge_col([' '|S1s], [' '|S2s], [' '|S3s]) :- merge_col(S1s, S2s, S3s).
 merge_col([S1|S1s], [' '|S2s], [S1|S3s]) :- merge_col(S1s, S2s, S3s).
 merge_col([_|S1s], [S2|S2s], [S2|S3s]) :- merge_col(S1s, S2s, S3s).
     
