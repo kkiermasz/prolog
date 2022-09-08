@@ -1,1 +1,1 @@
-Solutions of the tasks assigned to the prolog course
+## Solutions of the tasks assigned to the prolog course
